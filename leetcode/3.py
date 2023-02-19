@@ -2,20 +2,25 @@
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        ans = 1
         i = 0
         j = 1
-        ans = 1
-
-        while j < len(s):
-            if s[j] != s[i]:
+        n = len(s)
+        if not n:
+            return 0
+        while j < n:
+            try:
+                p = s[i:j].index(s[j]) + i
+            except ValueError:
+                p = None
+            if p is None:
                 j += 1
-                ans = max(ans, j - i)
             else:
-                i += 1
-                j += 1
+                i = p + 1
+            ans = max(ans, j - i)
         return ans
 
 
 S = Solution()
-x = S.lengthOfLongestSubstring("abcabcbb")
+x = S.lengthOfLongestSubstring("")
 print(x)

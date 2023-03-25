@@ -3,7 +3,7 @@ from typing import *
 
 
 class Solution:
-    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+    def nextGreaterElements1(self, nums: List[int]) -> List[int]:
         ans = [-1] * len(nums)
         new_array = sorted(enumerate(nums), key=lambda x: x[1])
         dups_array = [[new_array[0]]]
@@ -29,10 +29,19 @@ class Solution:
                     ans[j[0]] = nums[t2 + j[0]]
         return ans
 
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        stack = []
+        ans = [-1] * len(nums)
+        for _ in range(2):
+            for i in range(len(nums)):
+                while stack and nums[stack[-1]] < nums[i]:
+                    ans[stack.pop()] = nums[i]
+                stack.append(i)
+        return ans
 
 S = Solution()
-x = S.nextGreaterElements(
-    [10, 44, 49, 96, 13, 74, 100, 110, 8, 108, 48, 28, 89, 3, 15, 21, 115, 12, 66, 16, 85, 4, 102, 27, 26, 40, 77, 11,
+
+t = [10, 44, 49, 96, 13, 74, 100, 110, 8, 108, 48, 28, 89, 3, 15, 21, 115, 12, 66, 16, 85, 4, 102, 27, 26, 40, 77, 11,
      99, 15, 1, 70, 99, 40, 34, 23, 69, 85, 21, 5, 2, 112, 22, 123, 106, 100, 50, 94, 70, 63, 4, 117, 77, 107, 108, 74,
      28, 85, 85, 122, 8, 23, 63, 104, 114, 39, 8, 68, 83, 51, 43, 60, 17, 62, 12, 3, 64, 41, 2, 98, 37, 72, 54, 57, 90,
      116, 34, 39, 33, 34, 86, 10, 16, 63, 35, 31, 34, 48, 95, 112, 13, 85, 119, 116, 11, 68, 81, 118, 2, 113, 82, 16,
@@ -392,5 +401,7 @@ x = S.nextGreaterElements(
      57, 103, 64, 85, 123, 17, 64, 29, 81, 101, 115, 56, 18, 24, 27, 35, 103, 60, 31, 109, 52, 110, 14, 12, 65, 86, 51,
      45, 7, 32, 43, 41, 11, 25, 75, 61, 69, 119, 77, 81, 112, 106, 72, 63, 19, 69, 108, 38, 50, 17, 58, 63, 9, 4, 5,
      119, 41, 99, 11, 79, 71, 48, 51, 104, 43, 15, 14, 69, 1, 33, 91, 122, 35, 117, 37, 23, 124, 94, 11, 7, 97, 98, 39,
-     70, 119, 51, 29, 43, 33, 61, 28, 94, 29, 119, 59, 75, 107, 9, 115, 2, 28, 25, 78, 15, 74, 49, 29, 97, 99, 42])
-print(x)
+     70, 119, 51, 29, 43, 33, 61, 28, 94, 29, 119, 59, 75, 107, 9, 115, 2, 28, 25, 78, 15, 74, 49, 29, 97, 99, 42]
+# x = S.nextGreaterElements1(t)
+y = S.nextGreaterElements([1,2,1])
+print(y)

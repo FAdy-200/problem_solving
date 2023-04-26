@@ -1,3 +1,4 @@
 .idea/
 thinking*
 test*
+__pycache__/

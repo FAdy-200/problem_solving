@@ -2,3 +2,6 @@
 thinking*
 test*
 __pycache__/
+*.run
+*.out
+.vscode/

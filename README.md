@@ -4,7 +4,7 @@ This repository contains my solutions for various programming problems I have so
 
 ## Structure
 
-Each problem solution is contained within its own folder and includes a README file describing the problem and my approach to solving it. Within each folder, you will find the code file(s) and any necessary input files or test cases.
+Each problem solution is contained within its own file named after the problem's number or the it's full name
 
 ### Folders
 

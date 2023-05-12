@@ -22,5 +22,5 @@ Feel free to use this repository as a reference or resource for your own problem
 
 ## Contact
 
-If you have any questions or feedback about this repository or my solutions, please feel free to reach out to me at [insert email here].
+If you have any questions or feedback about this repository or my solutions, please feel free to reach out to me at fadi.alahmad.alomar@gmail.com.
 

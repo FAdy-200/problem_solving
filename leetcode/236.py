@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 from typing import *
-from USEFULL_CODES.TreeGenerator import *
+from USEFUL_CODES.TreeGenerator import *
 
 
 class Solution:

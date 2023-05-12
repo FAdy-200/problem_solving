@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/word-break/
 from typing import *
-from USEFULL_CODES.Trie import Trie, TreeNode
+from USEFUL_CODES.Trie import Trie, TreeNode
 
 
 class Solution:

@@ -5,3 +5,4 @@ __pycache__/
 *.run
 *.out
 .vscode/
+*.txt

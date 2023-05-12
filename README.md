@@ -4,7 +4,7 @@ This repository contains my solutions for various programming problems I have so
 
 ## Structure
 
-Each problem solution is contained within its own file named after the problem's number or the it's full name
+Each problem solution is contained within its own file named after the problem's number or it's full name.
 
 ### Folders
 

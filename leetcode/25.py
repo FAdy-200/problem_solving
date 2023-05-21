@@ -4,7 +4,6 @@ from typing import *
 from USEFUL_CODES.LinkedList import *
 
 
-# TODO: finish this
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         n = 0

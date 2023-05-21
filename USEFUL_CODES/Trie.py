@@ -48,3 +48,18 @@ class Trie:
             else:
                 temp = temp.children[i]
         return True
+
+    def remove(self, word: str) -> bool:
+        if not self.search(word):
+            return False
+        nodes = [self.head]
+        for i in word:
+            nodes.append(nodes[-1].children[i])
+        if nodes[-1].isParent:
+            nodes[-1].isEnd = False
+            return True
+        while nodes:
+            item = nodes.pop()
+            if nodes[-1].isParent:
+                nodes[-1].children.pop(item.val)
+                return True

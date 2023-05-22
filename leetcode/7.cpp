@@ -17,7 +17,7 @@ using std::max;
 class Solution {
 public:
     int reverse(int x) {
-        vector<int> MINT = {2,1,4,7,4,8,3,6,4,8};
+        vector<int> MINT = {2,1,4,7,4,8,3,6,4,7};
         vector<int> num;
         if(x<0)MINT[9] = 8;
         long int tx = abs(x);

@@ -1,9 +1,10 @@
+from typing import Dict
 class TreeNode:
     def __init__(self, x):
         self.val = x
-        self.children = dict()
-        self.isParent = False
-        self.isEnd = False
+        self.children:Dict[str,TreeNode] = dict()
+        self.isParent:bool = False
+        self.isEnd:bool = False
 
     def __repr__(self):
         return self.val
@@ -15,7 +16,7 @@ class TreeNode:
 class Trie:
 
     def __init__(self):
-        self.head = TreeNode(None)
+        self.head:TreeNode = TreeNode(None)
 
     def insert(self, word: str) -> None:
         temp = self.head

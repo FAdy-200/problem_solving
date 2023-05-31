@@ -5,7 +5,7 @@ from collections import defaultdict
 
 class Solution:
     def checkSubarraySum(self, nums: List[int], k: int) -> bool:
-        hash_map = defaultdict(lambda: None)
+        hash_map:DefaultDict[int,Optional[int]] = defaultdict(lambda: None)
         hash_map[0] = 0
         s = 0
         for i in range(len(nums)):

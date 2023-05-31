@@ -1,11 +1,12 @@
 # Problem Solving Repository
 
-This repository contains my solutions for various programming problems I have solved through out the years across different websites such as LeetCode, HackerRank, and Codeforces. The majority of these solutions are implemented in Python, newer solutions will be in C++.
+This repository contains my solutions for various programming problems I have solved through out the years across different websites such as LeetCode, HackerRank, and Codeforces. The majority of these solutions are implemented in Python, I plan to implement more solutions in C++.
 
 ## Structure
 
-Each problem solution is contained within its own file named after the problem's number or it's full name.
-If applicable the file will have the problem link commented as the first line.
+Each problem's solution is contained within its own file named after the problem's number or it's full name.
+
+If applicable the file will have the problem's link commented as the first line.
 
 ### Folders
 

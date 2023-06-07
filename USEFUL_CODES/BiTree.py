@@ -4,11 +4,11 @@ from collections import deque
 null = None
 
 
-class TreeNode:
+class BiTreeNode:
     def __init__(self, x):
         self.val = x
-        self.left:Optional[TreeNode] = None
-        self.right:Optional[TreeNode] = None
+        self.left:Optional[BiTreeNode] = None
+        self.right:Optional[BiTreeNode] = None
 
     def __repr__(self):
         return self.val
@@ -17,10 +17,10 @@ class TreeNode:
         return str(self.val)
 
 
-def create_tree(arr: List[int]) -> Optional[TreeNode]:
+def create_tree(arr: List[int]) -> Optional[BiTreeNode]:
     if not arr:
         return
-    head = TreeNode(arr[0])
+    head = BiTreeNode(arr[0])
     if len(arr) == 1:
         return head
     nodes = deque()
@@ -29,10 +29,10 @@ def create_tree(arr: List[int]) -> Optional[TreeNode]:
     while i < len(arr):
         if arr[i]:
             if i % 2:
-                nodes[0].left = TreeNode(arr[i])
+                nodes[0].left = BiTreeNode(arr[i])
                 nodes.append(nodes[0].left)
             else:
-                nodes[0].right = TreeNode(arr[i])
+                nodes[0].right = BiTreeNode(arr[i])
                 nodes.append(nodes[0].right)
                 nodes.popleft()
         else:

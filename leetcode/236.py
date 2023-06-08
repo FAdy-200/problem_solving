@@ -1,13 +1,14 @@
 # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 from typing import *
-from USEFUL_CODES.TreeGenerator import *
+from USEFUL_CODES.BiTree import *
 
 
 class Solution:
     def __init__(self):
         self.found = 0
 
-    def lowestCommonAncestor(self, root: 'TreeNode', p: Optional['TreeNode'], q: Optional['TreeNode']) -> Optional['TreeNode']:
+    def lowestCommonAncestor(self, root: 'BiTreeNode', p: Optional['BiTreeNode'], q: Optional['BiTreeNode']) -> Optional[
+        'BiTreeNode']:
         # self.helper(root,p,q)
         # return self.ans
         if not root:

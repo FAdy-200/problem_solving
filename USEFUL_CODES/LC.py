@@ -12,3 +12,8 @@ from math import *
 from sys import setrecursionlimit
 
 inf = float("inf")
+
+to_exclude = ['pow']
+
+for name in to_exclude:
+    del globals()[name]

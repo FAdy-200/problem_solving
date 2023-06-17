@@ -3,8 +3,10 @@ from collections import *
 from functools import *
 import heapq
 import bisect
-from USEFUL_CODES.GraphFunctions import *
-from USEFUL_CODES.LinkedList import *
-from USEFUL_CODES.Trie import *
+from .GraphFunctions import *
+from .LinkedList import *
+from .Trie import *
+from .BiTree import *
 from math import *
+
 inf = float("inf")

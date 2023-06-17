@@ -7,10 +7,10 @@ class TreeNode:
         self.isEnd:bool = False
 
     def __repr__(self):
-        return self.val
+        return self.__str__()
 
     def __str__(self):
-        return str(self.__repr__())
+        return str(self.val)
 
 
 class Trie:

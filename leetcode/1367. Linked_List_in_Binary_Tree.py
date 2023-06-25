@@ -1,24 +1,14 @@
-from typing import *
+# https://leetcode.com/problems/linked-list-in-binary-tree/
+from USEFUL_CODES.LC import *
 
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
 
 
 class Solution:
     def __init__(self):
         self.d = {}
 
-    def helper(self, head: Optional[ListNode], root: Optional[TreeNode], streak=False):
+    def helper(self, head: Optional[ListNode], root: Optional[BiTreeNode], streak=False):
         if self.d.get((head, root)) is not None:
             return self.d[(head, root)]
         if head is None:
@@ -52,36 +42,13 @@ class Solution:
         self.d[(head, root)] = ans1[0] | ans2[0], False
         return self.d[(head, root)]
 
-    def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
+    def isSubPath(self, head: Optional[ListNode], root: Optional[BiTreeNode]) -> bool:
         return self.helper(head, root)[0]
 
 
-def makeLL(x):
-    Head = ListNode(x[0])
-    temp = Head
-    for i in x[1:]:
-        Node = ListNode(i)
-        temp.next = Node
-        temp = Node
-    return Head
 
-
-def makeTree():
-    # FIXME THIS IS STUPID
-    Head = TreeNode(1)
-    Node1 = TreeNode(5)
-    Head.right = Node1
-    node2 = TreeNode(10)
-    node3 = TreeNode(9)
-    Node1.left = node2
-    Node1.right = node3
-    node4 = TreeNode(5)
-    node5 = TreeNode(2)
-    node2.right = node4
-    node4.left = node5
-    return Head
 
 
 S = Solution()
-x = S.isSubPath(makeLL([1, 5, 2]), makeTree())
+x = S.isSubPath(create_linked_list([1,4,2,6]), create_tree([1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]))
 print(x)

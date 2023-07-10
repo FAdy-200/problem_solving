@@ -1,7 +1,7 @@
 from typing import *
 from collections import *
 from functools import *
-import heapq
+from heapq import *
 import bisect
 import random
 from .GraphFunctions import *
@@ -13,7 +13,7 @@ from sys import setrecursionlimit
 
 inf = float("inf")
 
-to_exclude = ['pow']
+to_exclude = ['pow','dist']
 
 for name in to_exclude:
     del globals()[name]

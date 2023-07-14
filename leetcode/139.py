@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/word-break/
 from typing import *
-from USEFUL_CODES.Trie import Trie, TreeNode
+from USEFUL_CODES.Trie import Trie, TrieTreeNode
 
 
 class Solution:
@@ -10,7 +10,7 @@ class Solution:
             my_trie.insert(c)
         d = {}
 
-        def mySearch(i: int, node: TreeNode):
+        def mySearch(i: int, node: TrieTreeNode):
             if i in d:
                 return d[i]
             for j in range(i, len(s)):

@@ -1,10 +1,10 @@
 from typing import Dict
 
 
-class TreeNode:
+class TrieTreeNode:
     def __init__(self, x):
         self.val = x
-        self.children: Dict[str, TreeNode] = dict()
+        self.children: Dict[str, TrieTreeNode] = dict()
         self.isParent: bool = False
         self.isEnd: bool = False
 
@@ -18,7 +18,7 @@ class TreeNode:
 class Trie:
 
     def __init__(self):
-        self.head: TreeNode = TreeNode(None)
+        self.head: TrieTreeNode = TrieTreeNode(None)
 
     def add(self, word: str) -> None:
         return self.insert(word)
@@ -27,7 +27,7 @@ class Trie:
         temp = self.head
         for i in word:
             if i not in temp.children:
-                t1 = TreeNode(i)
+                t1 = TrieTreeNode(i)
                 temp.children[i] = t1
                 temp.isParent = True if len(temp.children) else False
                 temp = t1

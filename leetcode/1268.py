@@ -8,7 +8,7 @@ class Solution:
         for i in products:
             trie.add(i)
 
-        def suggest(head: TreeNode) -> List[str]:
+        def suggest(head: TrieTreeNode) -> List[str]:
             if not head.children.values():
                 return head.val
             lans = [head.val] if head.isEnd else []

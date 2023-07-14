@@ -4,9 +4,9 @@ from USEFUL_CODES.LC import *
 
 
 class Solution:
-    def distanceK(self, root: BiTreeNode, target: BiTreeNode, k: int) -> List[int]:
-        adj: DefaultDict[int, List[BiTreeNode]] = defaultdict(list)
-        d: Deque[BiTreeNode] = deque()
+    def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+        adj: DefaultDict[int, List[TreeNode]] = defaultdict(list)
+        d: Deque[TreeNode] = deque()
         d.append(root)
         while d:
             node = d.popleft()

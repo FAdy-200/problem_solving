@@ -8,7 +8,7 @@ class Solution:
     def __init__(self):
         self.d = {}
 
-    def helper(self, head: Optional[ListNode], root: Optional[BiTreeNode], streak=False):
+    def helper(self, head: Optional[ListNode], root: Optional[TreeNode], streak=False):
         if self.d.get((head, root)) is not None:
             return self.d[(head, root)]
         if head is None:
@@ -42,7 +42,7 @@ class Solution:
         self.d[(head, root)] = ans1[0] | ans2[0], False
         return self.d[(head, root)]
 
-    def isSubPath(self, head: Optional[ListNode], root: Optional[BiTreeNode]) -> bool:
+    def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
         return self.helper(head, root)[0]
 
 

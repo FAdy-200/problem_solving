@@ -3,7 +3,7 @@ from USEFUL_CODES.LC import *
 
 
 class Solution:
-    def maxLevelSum(self, root: Optional[TreeNode]) -> int:
+    def maxLevelSum(self, root: Optional[TrieTreeNode]) -> int:
         ma, p = [root.val, 1], 1
         d = deque()
         d.append((root, 1))

@@ -17,7 +17,7 @@ class Solution:
                     to_check.add((i, j))
         moves = [-1, 0, 1]
 
-        def dfs(li: int, lj: int, th: TreeNode, visited: set) -> List[str]:
+        def dfs(li: int, lj: int, th: TrieTreeNode, visited: set) -> List[str]:
             visited.add((li, lj))
             if not th:
                 return []

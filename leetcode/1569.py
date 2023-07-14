@@ -7,7 +7,7 @@ class Solution:
         root = create_BST(nums)
         MOD = 10 ** 9 + 7
 
-        def dfs(node: Optional[BiTreeNode]) -> List[int]:
+        def dfs(node: Optional[TreeNode]) -> List[int]:
             if not node:
                 return [0, 1]
             if not node.right and not node.left:

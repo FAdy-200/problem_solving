@@ -3,10 +3,10 @@ from USEFUL_CODES.LC import *
 
 
 class Solution:
-    def minDepth(self, root: Optional[BiTreeNode]) -> int:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
-        d: Deque[Tuple[BiTreeNode, int]] = deque()
+        d: Deque[Tuple[TreeNode, int]] = deque()
         d.append((root, 1))
         while d:
             node, lvl = d.popleft()

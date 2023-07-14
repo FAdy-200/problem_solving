@@ -4,12 +4,12 @@ from collections import deque
 null = None
 
 
-class BiTreeNode:
+class TreeNode:
     def __init__(self, x):
         self.val = x
         self.numberOfOccurrences = 1
-        self.left: Optional[BiTreeNode] = None
-        self.right: Optional[BiTreeNode] = None
+        self.left: Optional[TreeNode] = None
+        self.right: Optional[TreeNode] = None
 
     def __repr__(self):
         return self.__str__()
@@ -18,10 +18,10 @@ class BiTreeNode:
         return str(self.val)
 
 
-def create_tree(arr: List[int]) -> Optional[BiTreeNode]:
+def create_tree(arr: List[int]) -> Optional[TreeNode]:
     if not arr:
         return
-    head = BiTreeNode(arr[0])
+    head = TreeNode(arr[0])
     if len(arr) == 1:
         return head
     nodes = deque()
@@ -30,10 +30,10 @@ def create_tree(arr: List[int]) -> Optional[BiTreeNode]:
     while i < len(arr):
         if arr[i] is not null:
             if i % 2:
-                nodes[0].left = BiTreeNode(arr[i])
+                nodes[0].left = TreeNode(arr[i])
                 nodes.append(nodes[0].left)
             else:
-                nodes[0].right = BiTreeNode(arr[i])
+                nodes[0].right = TreeNode(arr[i])
                 nodes.append(nodes[0].right)
                 nodes.popleft()
         else:
@@ -43,16 +43,16 @@ def create_tree(arr: List[int]) -> Optional[BiTreeNode]:
     return head
 
 
-def create_BST(arr: List[int]) -> Optional[BiTreeNode]:
+def create_BST(arr: List[int]) -> Optional[TreeNode]:
     if not arr:
         return
-    head = BiTreeNode(arr[0])
+    head = TreeNode(arr[0])
     for i in arr[1:]:
         add_BST(head, i)
     return head
 
 
-def add_BST(root: Optional[BiTreeNode], val: int) -> None:
+def add_BST(root: Optional[TreeNode], val: int) -> None:
     if val == root.val:
         root.numberOfOccurrences += 1
         return
@@ -68,8 +68,8 @@ def add_BST(root: Optional[BiTreeNode], val: int) -> None:
         else:
             temp = temp.left
     if val > par.val:
-        par.right = BiTreeNode(val)
+        par.right = TreeNode(val)
     elif val == par.val:
         par.numberOfOccurrences += 1
     else:
-        par.left = BiTreeNode(val)
+        par.left = TreeNode(val)

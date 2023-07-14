@@ -7,8 +7,8 @@ class Solution:
     def __init__(self):
         self.found = 0
 
-    def lowestCommonAncestor(self, root: 'BiTreeNode', p: Optional['BiTreeNode'], q: Optional['BiTreeNode']) -> Optional[
-        'BiTreeNode']:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: Optional['TreeNode'], q: Optional['TreeNode']) -> Optional[
+        'TreeNode']:
         # self.helper(root,p,q)
         # return self.ans
         if not root:

@@ -1,4 +1,4 @@
-from typing import List, DefaultDict, Set, Dict
+from typing import List, DefaultDict, Set, Dict, Deque
 from collections import defaultdict, deque
 
 
@@ -16,7 +16,7 @@ def topological_sort(nodes: Set, dep: Dict[int, Set[int]] | DefaultDict[int, Set
             for lj in dep[li]:
                 in_ord[lj] += 1
     ans: List[int] = []
-    d = deque()
+    d:Deque = deque()
     for li in nodes:
         if not in_ord[li]:
             d.append(li)

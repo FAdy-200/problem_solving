@@ -5,7 +5,7 @@
 #include <vector>
 #include <unordered_map>
 #include <math.h>
-#include<algorithm>
+#include <algorithm>
 
 using std::vector;
 using std::cout;

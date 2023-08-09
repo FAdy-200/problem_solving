@@ -26,7 +26,7 @@ class Solution:
         self.d[ts, m] = list(map(lambda x: x + [m], temp))
         return self.d[ts, m]
 
-    def permute(self, nums: List[int]) -> List[List[int]]:
+    def permuteOld(self, nums: List[int]) -> List[List[int]]:
         s = set(nums)
         ts = tuple(s)
         if ts in self.d:
@@ -40,6 +40,25 @@ class Solution:
             if z := self.helper(cs, i):
                 temp += z
         return temp
+
+
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        ans = []
+        n = len(nums)
+        taken = [0]*6
+        def backtrack(sub_ans:List[int]):
+            if len(sub_ans) == n:
+                ans.append(sub_ans[:])
+                return
+            for j in range(0,n):
+                if not taken[j]:
+                    taken[j] = 1
+                    sub_ans.append(nums[j])
+                    backtrack(sub_ans)
+                    sub_ans.pop()
+                    taken[j] = 0
+        backtrack([])
+        return ans
 
 
 S = Solution()

@@ -1,12 +1,12 @@
 # https://leetcode.com/problems/minimum-size-subarray-sum/
-from typing import *
+from USEFUL_CODES.LC import *
 
 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         i = 0
         j = 1
-        ans = float("inf")
+        ans = inf
         su = nums[0]
         while len(nums) + 1 > j > i:
             if su >= target:
@@ -17,7 +17,7 @@ class Solution:
             else:
                 su += nums[j] if j < len(nums) else 0
                 j += 1
-        return int(ans) if ans != float("inf") else 0
+        return int(ans) if ans != inf else 0
 
 
 S = Solution()
